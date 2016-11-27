@@ -1,0 +1,30 @@
+package com.myvidessa.tst;
+
+import java.util.Properties;
+import java.util.logging.Logger;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.myvidessa.impl.MyvidessaLoadPropertiesFileImpl;
+
+public class MyvidessaAddProviderTest {
+	
+	public WebDriver driver;
+	public WebDriverWait wait;
+	MyvidessaLoadPropertiesFileImpl loadproperties = new MyvidessaLoadPropertiesFileImpl();
+	Properties prop = loadproperties.loadParamPropertiesFile();
+	Logger logger = Logger.getLogger("Provista Automation");
+	
+	public void setup(){
+		logger.info("Launching Browser");
+		driver = MyvidessaIntBrowserTest.initializeBrowser(driver, prop);
+		driver.manage().window().maximize();
+		logger.info("Opening Application now");
+		driver.get(prop.getProperty("BASEURL"));
+	}
+	public void addProviderWithNoDataFilled(){
+		
+	}
+
+}

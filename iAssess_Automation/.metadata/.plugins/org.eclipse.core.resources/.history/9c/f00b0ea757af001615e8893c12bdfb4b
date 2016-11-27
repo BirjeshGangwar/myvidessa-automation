@@ -1,0 +1,99 @@
+package com.myvidessa.tst;
+
+import java.util.ArrayList;
+import java.util.Properties;
+import java.util.logging.Logger;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.myvidessa.genericMethods.MyvidessaCommanHelperImpl;
+import com.myvidessa.genericMethods.MyvidessaCommanImpl;
+import com.myvidessa.impl.MyvidessaAddProviderHelperImpl;
+import com.myvidessa.impl.MyvidessaAddProviderImpl;
+import com.myvidessa.impl.MyvidessaLoadPropertiesFileImpl;
+import com.myvidessa.locator.MyvidessaAddProviderLocator;
+
+public class MyvidessaAddProviderTest {
+
+	public WebDriver driver;
+	public WebDriverWait wait;
+	MyvidessaLoadPropertiesFileImpl loadproperties = new MyvidessaLoadPropertiesFileImpl();
+	Properties prop = loadproperties.loadParamPropertiesFile();
+	MyvidessaAddProviderHelperImpl providerhelperimpl = new MyvidessaAddProviderImpl();
+	MyvidessaCommanHelperImpl commonhelperimpl = new MyvidessaCommanImpl();
+	Logger logger = Logger.getLogger("Provista Automation");
+
+	@BeforeClass
+	public void setup() {
+		logger.info("Launching Browser");
+		driver = MyvidessaIntBrowserTest.initializeBrowser(driver, prop);
+		driver.manage().window().maximize();
+		logger.info("Opening Application now");
+		driver.get(prop.getProperty("BASEURLREGISTRATION"));
+	}
+
+	@Test(priority = 0)
+	public void addProviderWithNoDataFilled() {
+		try {
+			logger.info("Add Provider with no data");
+			providerhelperimpl.addProviderWithNoData(driver);
+			String expectedmessage = "Entries marked with asterisk(*) are required. Please make sure you have filled all required fields with valid data.";
+			commonhelperimpl.assertVerifyTextOnPage(By.xpath(MyvidessaAddProviderLocator.PROVIDER_ERROR_XPATH), driver,
+					expectedmessage);
+			logger.info("Error Message is same as expected|| Test Case Passed");
+			Thread.sleep(1000);
+			driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ALERT_CLOSE_ID)).click();
+			Thread.sleep(1000);
+			driver.findElement(By.xpath(MyvidessaAddProviderLocator.PROVIDER_CLOSE_ICON_XPATH)).click();
+		} catch (Exception e) {
+			logger.info("Exception occured|| Test Case Failed");
+			logger.info(e.getMessage());
+		}
+
+	}
+
+	@Test(priority = 1,dataProvider="validDataToAddProvider")
+	public void addProviderWithValidData(int title, String fname, String mname, String lname, String email, String phone,
+			String NPINumber, String NPIName, String facname, String facphone, String facfax, String addline1,
+			String addline2, String city, int state, String zip) {
+		try {
+			logger.info("Add Provider with Valid data in all fields");
+			providerhelperimpl.addProvider(driver, title, fname, mname, lname, email, phone, NPINumber, NPIName, facname, facphone, facfax, addline1, addline2, city, state, zip);
+			
+		} catch (Exception e) {
+			logger.info("Exception occured|| Test Case Failed");
+			logger.info(e.getMessage());
+		}
+
+	}
+	@DataProvider(name="validDataToAddProvider")
+	private Object[][] validDataToAddProvider()
+	{
+		Object[][] data=new Object[1][16];
+		data[0][0]=commonhelperimpl.randomNumberGenerator(3);
+		data[0][1]="Test"+"fname"+commonhelperimpl.generateString("aefgshklhti", 2);
+		data[0][2]="Test"+"mname"+commonhelperimpl.generateString("aefgshklhti", 2);
+		data[0][3]="Test"+"lname"+commonhelperimpl.generateString("aefgshklhti", 2);
+		data[0][4]="Test"+"email"+"@"+commonhelperimpl.generateString("aefgshklhti", 3)+".co";
+		data[0][5]="11231234"+commonhelperimpl.randomNumberGenerator(9);
+		data[0][6]="112376492"+commonhelperimpl.randomNumberGenerator(9);
+		data[0][7]="Test"+"npiname"+commonhelperimpl.generateString("aefgshklhti", 2);
+		data[0][8]="Test"+"facname"+commonhelperimpl.generateString("aefgshklhti", 2);
+		data[0][9]="11231234"+commonhelperimpl.randomNumberGenerator(9);
+		data[0][10]="11231234"+commonhelperimpl.randomNumberGenerator(9);
+		data[0][11]="Test"+"addline1"+commonhelperimpl.generateString("aefgshklhti", 2);
+		data[0][12]="Test"+"addline2"+commonhelperimpl.generateString("aefgshklhti", 2);
+		data[0][13]="Test"+"c"+commonhelperimpl.generateString("aefgshklhti", 2);
+		data[0][14]=commonhelperimpl.randomNumberGenerator(7);
+		data[0][15]="1234"+commonhelperimpl.randomNumberGenerator(9);
+		
+		
+		return data;
+	}
+	
+}

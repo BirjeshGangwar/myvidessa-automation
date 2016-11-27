@@ -1,0 +1,14 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.WebDriver;
+
+public class MyvidessaLoginImpl implements MyvidessaLoginHelperImpl{
+
+	@Override
+	public void performLogin(WebDriver driver,String username, String password) {
+		
+		
+	}
+	
+
+}

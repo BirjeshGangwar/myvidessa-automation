@@ -1,0 +1,6 @@
+package com.myvidessa.genericMethods;
+
+public interface MyvidessaCommanHelperImpl {
+	public void assertVerifyTextOnPage(By by, WebDriver driver, String expectedResult);
+
+}

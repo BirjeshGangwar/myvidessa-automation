@@ -1,0 +1,19 @@
+package com.myvidessa.impl;
+
+public class MyvidessaLoginImpl implements MyvidessaLoginHelperImpl{
+
+	@Override
+	public void loginWithValidCredentials(String username, String password) {
+	
+		
+	}
+
+	@Override
+	public void loginWithInvalidCredentials(String username, String password) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

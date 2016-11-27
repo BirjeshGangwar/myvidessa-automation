@@ -1,0 +1,9 @@
+#URL of Application 
+BASEURL=https://clientportal-dev.provistadx.com/
+BASEURLREGISTRATION="https://clientportal-dev.provistadx.com/home/registration";
+
+#This the path for chromedriver exe
+CHROMEDRIVERPATH=C:\\Users\\Birjesh\\Desktop\\Scripts\\NSDC\\BrowserDrivers\\chromedriver.exe
+
+#This is the path of log file
+LOGFILEPATH=C:\\Users\\Birjesh\\Desktop\\iAssess_Automation\\Provista Automation\\log\\Myvidessalog

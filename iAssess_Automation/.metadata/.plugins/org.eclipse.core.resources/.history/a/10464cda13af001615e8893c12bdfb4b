@@ -1,0 +1,7 @@
+package com.myvidessa.impl;
+
+public interface MyvidessaAddProviderHelperImpl {
+	//This method is to add the provider
+	public void addProvider();
+
+}

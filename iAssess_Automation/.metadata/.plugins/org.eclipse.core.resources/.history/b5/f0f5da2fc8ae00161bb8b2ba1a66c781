@@ -1,0 +1,12 @@
+package com.myvidessa.tst;
+
+import org.openqa.selenium.WebDriver;
+
+public class MyvidessaIntBrowserTest {
+
+	public WebDriver driver;
+	public static void initializeBrowser()
+	{
+		
+	}
+}

@@ -1,0 +1,47 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.myvidessa.genericMethods.MyvidessaCommanHelperImpl;
+import com.myvidessa.genericMethods.MyvidessaCommanImpl;
+import com.myvidessa.locator.MyvidessaAddProviderLocator;
+
+public class MyvidessaAddProviderImpl implements MyvidessaAddProviderHelperImpl {
+
+	MyvidessaCommanHelperImpl commonhelperimpl = new MyvidessaCommanImpl();
+
+	@Override
+	public void addProvider(WebDriver driver,int title, String fname, String mname, String lname, String email, String phone,
+			String NPINumber, String NPIName, String facname, String facphone, String facfax, String addline1,
+			String addline2, String city, int state, String zip) throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ADDPROVIDER_BTN_ID)).click();
+		Thread.sleep(1000);
+		commonhelperimpl.valueFromDropDownByIndex(By.id(MyvidessaAddProviderLocator.PROVIDER_TITLE_ID), driver, title);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_FIRSTNAME_ID)).sendKeys(fname);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_MIDDLENAME_ID)).sendKeys(mname);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_EMAIL_ID)).sendKeys(email);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_PHONE_ID)).sendKeys(phone);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_NPINUM_ID)).sendKeys(NPINumber);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_NAMENPI_ID)).sendKeys(NPIName);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_FACILITYNAME_ID)).sendKeys(facname);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_FACILITYPHONE_ID)).sendKeys(facphone);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_FACILITYFAX_ID)).sendKeys(facfax);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ADDRESSLINE1_ID)).sendKeys(addline1);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ADDRESSLINE2_ID)).sendKeys(addline2);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_FACILITYCITY_ID)).sendKeys(city);
+        commonhelperimpl.valueFromDropDownByIndex(By.id(MyvidessaAddProviderLocator.PROVIDER_TITLE_ID), driver, state)
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_FACILITYZIP_ID)).sendKeys(zip);
+        driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_SUBMIT_BTN_ID)).click();
+	}
+
+	@Override
+	public void addProviderWithNoData(WebDriver driver) throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ADDPROVIDER_BTN_ID)).click();
+		Thread.sleep(3000);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_SUBMIT_BTN_ID)).click();
+	}
+
+}

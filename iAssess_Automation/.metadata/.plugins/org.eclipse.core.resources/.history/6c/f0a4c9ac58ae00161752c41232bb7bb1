@@ -1,0 +1,29 @@
+package com.myvidessa.tst;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+import com.myvidessa.locator.MyvidessaLoginLocator;
+
+public class MyvidessaLoginTest {
+	public WebDriver driver;
+	
+	@Test
+	public void loginWithValidCredentials()
+	{
+		String path="C:\\Users\\Birjesh\\Desktop\\Scripts\\NSDC\\BrowserDrivers\\geckodriver.exe";
+	    System.setProperty("webdriver.gecko.driver",path);	
+	    driver=new FirefoxDriver();
+	    driver.get("www.clientportal-dev.provistadx.com/");	
+	    driver.manage().window().maximize();
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_USERNAME_ID)).sendKeys("ruchi@samitsolutions.com");;
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_PASSWORD_ID)).sendKeys("Rpm@123");;
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_SIGNIN_BTN_CLASS)).click();
+		
+	}
+	
+
+}

@@ -1,0 +1,6 @@
+package com.myvidessa.locator;
+
+public class MyvidessaAddProviderLocator {
+	public static String PROVIDER_TITLE_ID="ptitle";
+
+}

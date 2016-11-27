@@ -1,0 +1,35 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.myvidessa.genericMethods.MyvidessaCommanHelperImpl;
+import com.myvidessa.genericMethods.MyvidessaCommanImpl;
+import com.myvidessa.locator.MyvidessaAddProviderLocator;
+
+public class MyvidessaAddProviderImpl implements MyvidessaAddProviderHelperImpl {
+
+	MyvidessaCommanHelperImpl commonhelperimpl = new MyvidessaCommanImpl();
+
+	@Override
+	public void addProvider(WebDriver driver, String fname, String mname, String lname, String email, String phone,
+			String NPINumber, String NPIName, String facname, String facphone, String facfax, String addline1,
+			String addline2, String city, String state, String zip) throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ADDPROVIDER_BTN_ID)).click();
+		Thread.sleep(1000);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_FIRSTNAME_ID)).sendKeys(fname);
+		String expectedmessage = "Entries marked with asterisk(*) are required. Please make sure you have filled all required fields with valid data.";
+		commonhelperimpl.assertVerifyTextOnPage(By.xpath(MyvidessaAddProviderLocator.PROVIDER_ERROR_XPATH), driver,
+				expectedmessage);
+	}
+
+	@Override
+	public void addProviderWithNoData(WebDriver driver) throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ADDPROVIDER_BTN_ID)).click();
+		Thread.sleep(3000);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_SUBMIT_BTN_ID)).click();
+	}
+
+}

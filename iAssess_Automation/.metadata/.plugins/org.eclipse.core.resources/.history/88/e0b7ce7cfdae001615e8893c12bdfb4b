@@ -1,0 +1,12 @@
+Nov 20, 2016 2:08:01 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Launching Browser
+Nov 20, 2016 2:08:07 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Opening Application now
+Nov 20, 2016 2:08:17 PM com.myvidessa.tst.MyvidessaLoginTest loginWithValidCredentials
+INFO: Login with valid credentials
+Nov 20, 2016 2:08:31 PM com.myvidessa.tst.MyvidessaLoginTest loginWithValidCredentials
+INFO: Login Successfully into system|| Test Case Passed
+Nov 20, 2016 2:08:43 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Launching Browser
+Nov 20, 2016 2:08:47 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Opening Application now

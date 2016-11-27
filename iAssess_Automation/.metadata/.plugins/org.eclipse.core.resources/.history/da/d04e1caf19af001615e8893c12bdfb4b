@@ -1,0 +1,31 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+
+import com.myvidessa.genericMethods.MyvidessaCommanHelperImpl;
+import com.myvidessa.genericMethods.MyvidessaCommanImpl;
+import com.myvidessa.locator.MyvidessaAddProviderLocator;
+import com.myvidessa.locator.MyvidessaSignupLocator;
+
+public class MyvidessaAddProviderImpl implements MyvidessaAddProviderHelperImpl {
+
+	MyvidessaCommanHelperImpl commonhelperimpl = new MyvidessaCommanImpl();
+
+	@Override
+	public void addProvider(WebDriver driver) {
+
+	}
+
+	@Override
+	public void addProviderWithNoData(WebDriver driver) throws InterruptedException {
+		driver.findElement(By.linkText(MyvidessaSignupLocator.SIGNUP_REGISTER_LINKTEXT)).click();
+		Thread.sleep(2000);
+		driver.findElement(By.tagName("body")).sendKeys(Keys.CONTROL,Keys.NUMPAD2);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ADDPROVIDER_BTN_ID)).click();
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_SUBMIT_BTN_ID)).click();;
+
+	}
+
+}

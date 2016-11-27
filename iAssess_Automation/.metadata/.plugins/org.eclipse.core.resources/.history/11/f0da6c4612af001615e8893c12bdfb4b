@@ -1,0 +1,42 @@
+package com.myvidessa.genericMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+public class MyvidessaCommanImpl implements MyvidessaCommanHelperImpl {
+
+	// This method is use to verify text content on the page.
+	@Override
+	public void assertVerifyTextOnPage(By by, WebDriver driver, String expectedResult) {
+		String actualResult = driver.findElement(by).getText();
+		Assert.assertEquals(actualResult, expectedResult);
+	}
+
+	@Override
+	// This method is used to find if element is present on the page or not.
+		public boolean isElementPresent(By by, WebDriver driver) {
+			try {
+				//wait.until(ExpectedConditions.presenceOfElementLocated(by));
+				if((driver.findElements(by).size())>0){
+				return true;
+				} else {
+					return false;
+				}
+			} catch (org.openqa.selenium.NoSuchElementException e) {
+				return false;
+			}
+		}
+
+	@Override
+	public void valueFromDropDownByIndex(By by, WebDriver driver) {
+		Select dropdown=new Select(driver.findElement(by))
+		
+	}
+
+	@Override
+	public void valueFromDropDownByVisibleText(By by, WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+}

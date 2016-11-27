@@ -1,0 +1,11 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.WebDriver;
+
+public interface MyvidessaLoginHelperImpl {
+
+	//this method is for login into system 
+	public void performLogin(WebDriver driver,String username,String password);
+	
+	public void performLogout(WebDriver driver);
+}

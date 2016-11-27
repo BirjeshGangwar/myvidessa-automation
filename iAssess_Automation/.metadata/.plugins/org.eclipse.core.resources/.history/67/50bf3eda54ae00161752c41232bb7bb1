@@ -1,0 +1,21 @@
+package com.myvidessa.tst;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.myvidessa.locator.MyvidessaLoginLocator;
+
+public class MyvidessaLoginTest {
+	public WebDriver driver;
+	public void loginWithValidCredentials()
+	{
+		driver=new ChromeDriver();
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_USERNAME_ID)).sendKeys("");;
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_PASSWORD_ID)).sendKeys("");;
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_SIGNIN_BTN_CLASS)).click();
+		
+	}
+	
+
+}

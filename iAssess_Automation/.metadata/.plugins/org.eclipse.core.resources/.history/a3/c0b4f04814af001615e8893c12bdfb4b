@@ -1,0 +1,13 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.WebDriver;
+
+public class MyvidessaAddProviderImpl implements MyvidessaAddProviderHelperImpl {
+
+	@Override
+	public void addProvider(WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

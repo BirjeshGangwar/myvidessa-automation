@@ -1,0 +1,10 @@
+package com.myvidessa.genericMethods;
+
+public class MyvidessaCommanImpl {
+
+	// This method is use to verify text content on the page.
+		public void assertVerifyTextOnPage(By by, WebDriver driver, String expectedResult) {
+			String actualResult = driver.findElement(by).getText();
+			Assert.assertEquals(actualResult, expectedResult);
+		}
+}

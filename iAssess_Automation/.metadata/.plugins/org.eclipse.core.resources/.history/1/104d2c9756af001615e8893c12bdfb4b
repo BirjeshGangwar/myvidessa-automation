@@ -1,0 +1,27 @@
+package com.myvidessa.locator;
+
+public class MyvidessaAddProviderLocator {
+	
+	//Locators of personal information section form
+	public static String PROVIDER_ADDPROVIDER_BTN_ID="providerDialog";
+	public static String PROVIDER_TITLE_ID="ptitle";
+	public static String PROVIDER_FIRSTNAME_ID="pfname";
+	public static String PROVIDER_MIDDLENAME_ID="pmname";
+	public static String PROVIDER_LASTNAME_ID="plname";
+	public static String PROVIDER_EMAIL_ID="pemail";
+	public static String PROVIDER_PHONE_ID="pdirectphonenumber";
+	public static String PROVIDER_NPINUM_ID="pnumnpi";
+	public static String PROVIDER_NAMENPI_ID="pnamenpi";
+	
+	//locators for Facility information section form
+	public static String PROVIDER_FACILITYNAME_ID="pfacilityname";
+	public static String PROVIDER_FACILITYPHONE_ID="pfacilitypnum";
+	public static String PROVIDER_FACILITYFAX_ID="pfacilityfaxnum";
+	public static String PROVIDER_ADDRESSLINE1_ID="pfacilityaline1";
+	public static String PROVIDER_ADDRESSLINE2_ID="pfacilityaline2";
+	public static String PROVIDER_FACILITYCITY_ID="pfacilitycity";
+	public static String PROVIDER_FACILITYSTATE_ID="pfacilitystate";
+	public static String PROVIDER_FACILITYZIP_ID="pfacilityzip";
+    public static String PROVIDER_SUBMIT_BTN_ID="onproviderSubmit";
+    public static String PROVIDER_ERROR_XPATH="html/body/div[2]/div[2]/div/h4/span";
+}

@@ -1,0 +1,12 @@
+package com.myvidessa.locator;
+
+public class MyvidessaLoginLocator {
+	public static String LOGIN_USERNAME_ID="username";
+	public static String LOGIN_PASSWORD_ID="password";
+    public static String LOGIN_SIGNIN_BTN_CLASS="login-buttons";
+    public static String LOGIN_ERROR_XPATH="html/body/div[1]/div[2]/div[2]/form/div[5]/div/div";
+    
+    //log-out locator
+    public static String PROFILE_MENU_CLASS="hidden-xs";
+    public static String LOGOUT_LINK_ID="logout-link";
+}

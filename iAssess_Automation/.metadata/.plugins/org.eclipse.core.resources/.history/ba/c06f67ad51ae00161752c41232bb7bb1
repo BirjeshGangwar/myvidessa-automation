@@ -1,0 +1,7 @@
+package com.myvidessa.impl;
+
+public interface MyvidessaLoginHelperImpl {
+
+	public void loginWithValidCredentials(String username,String password);
+	public void loginWithInvalidCredentials(String username,String password);
+}

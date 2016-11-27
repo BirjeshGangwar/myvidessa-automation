@@ -1,0 +1,15 @@
+package com.myvidessa.tst;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MyvidessaIntBrowserTest {
+
+	public static void initializeBrowser(WebDriver driver,Properties prop)
+	{
+		String path="C:\\Users\\Birjesh\\Desktop\\Scripts\\NSDC\\BrowserDrivers\\chromedriver.exe";
+	    System.setProperty("webdriver.chrome.driver",path);	
+	    driver=new ChromeDriver();
+	    driver.manage().window().maximize();
+	}
+}

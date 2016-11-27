@@ -1,0 +1,18 @@
+package com.myvidessa.genericMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public interface MyvidessaCommanHelperImpl {
+	
+	public void assertVerifyTextOnPage(By by, WebDriver driver, String expectedResult);
+	
+	// This method is used to find if element is present on the page or not.
+	public boolean isElementPresent(By by, WebDriver driver);
+	
+	//This function is to handle drop down
+	public void valueFromDropDownByIndex(By by,WebDriver driver);
+	
+	public void valueFromDropDownByIndex(By by,WebDriver driver);
+
+}
