@@ -1,0 +1,25 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import com.myvidessa.locator.MyvidessaLoginLocator;
+
+public class MyvidessaLoginImpl implements MyvidessaLoginHelperImpl {
+
+	@Override
+	public void performLogin(WebDriver driver, String username, String password) {
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_USERNAME_ID)).sendKeys(username);
+		;
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_PASSWORD_ID)).sendKeys(password);
+		;
+		driver.findElement(By.className(MyvidessaLoginLocator.LOGIN_SIGNIN_BTN_CLASS)).click();
+	}
+
+	@Override
+	public void performLogout(WebDriver driver) {
+		driver.findElement(By.className(MyvidessaLoginLocator.PROFILE_MENU_CLASS)).click();]
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGOUT_LINK_ID)).click();
+
+	}
+
+}

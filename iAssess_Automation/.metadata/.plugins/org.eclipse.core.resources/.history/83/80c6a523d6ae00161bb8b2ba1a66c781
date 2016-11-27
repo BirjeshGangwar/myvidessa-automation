@@ -1,0 +1,12 @@
+package com.myvidessa.impl;
+
+public class MyvidessaLoginImpl implements MyvidessaLoginHelperImpl{
+
+	@Override
+	public void performLogin(String username, String password) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

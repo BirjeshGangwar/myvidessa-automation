@@ -1,0 +1,41 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.myvidessa.genericMethods.MyvidessaCommanHelperImpl;
+import com.myvidessa.genericMethods.MyvidessaCommanImpl;
+import com.myvidessa.locator.MyvidessaAddProviderLocator;
+
+public class MyvidessaAddProviderImpl implements MyvidessaAddProviderHelperImpl {
+
+	MyvidessaCommanHelperImpl commonhelperimpl = new MyvidessaCommanImpl();
+
+	@Override
+	public void addProvider(WebDriver driver,) throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ADDPROVIDER_BTN_ID)).click();
+		Thread.sleep(1000);
+		driver.findElement(arg0)
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_SUBMIT_BTN_ID)).click();		
+		String expectedmessage="Entries marked with asterisk(*) are required. Please make sure you have filled all required fields with valid data.";
+		commonhelperimpl.assertVerifyTextOnPage(By.xpath(MyvidessaAddProviderLocator.PROVIDER_ERROR_XPATH), driver, expectedmessage);
+	}
+
+	@Override
+	public void addProviderWithNoData(WebDriver driver) throws InterruptedException {
+		Thread.sleep(2000);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ADDPROVIDER_BTN_ID)).click();
+		Thread.sleep(3000);
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_SUBMIT_BTN_ID)).click();		
+		String expectedmessage="Entries marked with asterisk(*) are required. Please make sure you have filled all required fields with valid data.";
+		commonhelperimpl.assertVerifyTextOnPage(By.xpath(MyvidessaAddProviderLocator.PROVIDER_ERROR_XPATH), driver, expectedmessage);
+	}
+
+}

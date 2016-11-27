@@ -1,0 +1,6 @@
+package com.myvidessa.locator;
+
+public class MyvidessaLoginLocator {
+	public static String userName='username';
+
+}

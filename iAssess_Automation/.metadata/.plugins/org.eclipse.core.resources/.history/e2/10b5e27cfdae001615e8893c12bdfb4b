@@ -1,0 +1,32 @@
+Nov 20, 2016 2:11:14 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Launching Browser
+Nov 20, 2016 2:11:18 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Opening Application now
+Nov 20, 2016 2:11:27 PM com.myvidessa.tst.MyvidessaLoginTest loginWithValidCredentials
+INFO: Login with valid credentials
+Nov 20, 2016 2:11:38 PM com.myvidessa.tst.MyvidessaLoginTest loginWithValidCredentials
+INFO: Login Successfully into system|| Test Case Passed
+Nov 20, 2016 2:11:51 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Launching Browser
+Nov 20, 2016 2:11:55 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Opening Application now
+Nov 20, 2016 2:12:04 PM com.myvidessa.tst.MyvidessaLoginTest loginWithValidCredentials
+INFO: Login with valid credentials
+Nov 20, 2016 2:12:19 PM com.myvidessa.tst.MyvidessaLoginTest loginWithValidCredentials
+INFO: Login Successfully into system|| Test Case Passed
+Nov 20, 2016 2:12:32 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Launching Browser
+Nov 20, 2016 2:12:35 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Opening Application now
+Nov 20, 2016 2:12:46 PM com.myvidessa.tst.MyvidessaLoginTest loginWithInvalidCredentials
+INFO: Login with invalid credentials
+Nov 20, 2016 2:12:49 PM com.myvidessa.tst.MyvidessaLoginTest loginWithInvalidCredentials
+INFO: Error message is same as expected|| Test Case Passed
+Nov 20, 2016 2:12:51 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Launching Browser
+Nov 20, 2016 2:12:54 PM com.myvidessa.tst.MyvidessaLoginTest setup
+INFO: Opening Application now
+Nov 20, 2016 2:13:04 PM com.myvidessa.tst.MyvidessaLoginTest loginWithInvalidCredentials
+INFO: Login with invalid credentials
+Nov 20, 2016 2:13:07 PM com.myvidessa.tst.MyvidessaLoginTest loginWithInvalidCredentials
+INFO: Error message is same as expected|| Test Case Passed

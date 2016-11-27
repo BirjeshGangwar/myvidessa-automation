@@ -1,0 +1,27 @@
+package com.myvidessa.tst;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import com.myvidessa.locator.MyvidessaLoginLocator;
+
+public class MyvidessaLoginTest {
+	public WebDriver driver;
+	
+	@Test
+	public void loginWithValidCredentials()
+	{
+		driver=new ChromeDriver();
+		String path="C:\\Users\\Birjesh\\Desktop\\MyProject\\Batch Upload\\BrowserDrivers\\chromedriver.exe";
+	    System.setProperty("webdriver.chrome.driver",path);	
+	    driver.get(" https://clientportal-dev.provistadx.com/");
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_USERNAME_ID)).sendKeys("ruchi@samitsolutions.com");;
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_PASSWORD_ID)).sendKeys("Rpm@123");;
+		driver.findElement(By.id(MyvidessaLoginLocator.LOGIN_SIGNIN_BTN_CLASS)).click();
+		
+	}
+	
+
+}

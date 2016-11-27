@@ -1,0 +1,13 @@
+package com.myvidessa.locator;
+
+public class MyvidessaSignupLocator {
+	public static String SIGNUP_REGISTER_LINKTEXT="here";
+	public static String SIGNUP_TITLE_ID="usertitle";
+	public static  String SIGNUP_FIRSTNAME_ID="userfname";
+	public static  String SIGNUP_MIDDLENAME_ID="usermname";
+	public static  String SIGNUP_LASTNAME_ID="userlname";
+	public static  String SIGNUP_EMAIL_ID="useremail";
+	public static  String SIGNUP_PHONENUM_ID="userdpnum";
+
+
+}

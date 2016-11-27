@@ -1,0 +1,7 @@
+package com.myvidessa.locator;
+
+public class MyvidessaSignupLocator {
+	public static String SIGNUP_LINK_LINKTEXT="here";
+	
+
+}

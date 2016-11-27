@@ -1,0 +1,5 @@
+#URL of Application 
+BASEURL=https://clientportal-dev.provistadx.com/
+
+#This the path for chromedriver exe
+CHROMEDRIVERPATH=C:\\Users\\Birjesh\\Desktop\\Scripts\\NSDC\\BrowserDrivers\\chromedriver.exe

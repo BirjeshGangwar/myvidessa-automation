@@ -1,0 +1,133 @@
+package com.myvidessa.tst;
+
+import java.io.IOException;
+import java.util.Date;
+import java.util.Properties;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Sleeper;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.myvidessa.genericMethods.MyvidessaCommanHelperImpl;
+import com.myvidessa.genericMethods.MyvidessaCommanImpl;
+import com.myvidessa.impl.MyvidessaLoadPropertiesFileImpl;
+import com.myvidessa.impl.MyvidessaLoginHelperImpl;
+import com.myvidessa.impl.MyvidessaLoginImpl;
+import com.myvidessa.locator.MyvidessaLoginLocator;
+import com.sun.jmx.snmp.Timestamp;
+
+public class MyvidessaLoginTest {
+	public WebDriver driver;
+	public WebDriverWait wait;
+	MyvidessaLoadPropertiesFileImpl loadproperties = new MyvidessaLoadPropertiesFileImpl();
+	Properties prop = loadproperties.loadParamPropertiesFile();
+	MyvidessaLoginHelperImpl loginhelperimpl = new MyvidessaLoginImpl();
+	Logger logger = Logger.getLogger("Provista Automation");
+	MyvidessaCommanHelperImpl myvidessacommonimpl=new MyvidessaCommanImpl();
+	
+	
+	@BeforeClass
+    public void initializeLogging()
+    {
+		initializeLog4j(logger);
+    }
+    
+
+	@BeforeMethod
+	public void setup() {
+		
+		logger.info("Launching Browser");
+		driver = MyvidessaIntBrowserTest.initializeBrowser(driver, prop);
+		driver.manage().window().maximize();
+		logger.info("Opening Application now");
+		driver.get(prop.getProperty("BASEURL"));		
+	}
+
+	@Test(dataProvider = "validlogincredentials",priority=0)
+	public void loginWithValidCredentials(String username, String password) {
+		try{
+		logger.info("Login with valid credentials");
+		loginhelperimpl.performLogin(driver, username, password);
+	    Assert.assertEquals("Provista Customer Portal", driver.getTitle());
+	    System.out.println("Login Successfully into system!");
+	    logger.info("Login Successfully into system!");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Login failed!");
+			logger.info("Login Failed with valid credentials");
+		}
+	}
+
+	@Test(dataProvider = "inavlidloginCredentials",priority=1)
+	public void loginWithInvalidCredentials(String username, String password) {
+		try{
+		String errormessage="Error:Invalid username or password";
+		logger.info("Login with invalid credentials");
+		loginhelperimpl.performLogin(driver, username, password);
+		Thread.sleep(2000);
+		myvidessacommonimpl.assertVerifyTextOnPage(By.xpath(MyvidessaLoginLocator.LOGIN_ERROR_XPATH), driver,errormessage);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Test case failed");
+			logger.info("Error message is not same as expected");
+		}
+	}
+
+	@AfterMethod
+	public void closeBrowser() {
+		driver.quit();
+	}
+
+	@DataProvider(name = "validlogincredentials")
+	public Object[][] loginDataProviderValid() {
+		Object[][] credentials = new Object[2][2];
+		credentials[0][0] = "ruchi@samitsolutions.com";
+		credentials[0][1] = "Rpm@123";
+		credentials[1][0] = "bcgangwar411411@gmail.com";
+		credentials[1][1] = "Birjesh012@";
+		return credentials;
+	}
+
+	@DataProvider(name = "inavlidloginCredentials")
+	public Object[][] loginDataProviderInvalid() {
+		Object[][] credentials = new Object[2][2];
+		credentials[0][0] = "ruchi@samitsolutions.com";
+		credentials[0][1] = "12345";
+		credentials[1][0] = "abcd@gmail.com";
+		credentials[1][1] = "Birjesh012@";
+		return credentials;
+	}
+	
+	private void initializeLog4j(Logger logger2) {
+		try {
+			// This block configure the logger with handler and formatter
+			Date d = new Date();
+			Timestamp t = new Timestamp(d.getTime());
+			String timeStamp = t.toString();
+			timeStamp = timeStamp.replace(' ', '_');
+			timeStamp = timeStamp.replace(':', '_');
+
+			FileHandler fileHandler = new FileHandler(prop.getProperty("LOGFILEPATH") + timeStamp + ".log");
+			logger2.addHandler(fileHandler);
+			SimpleFormatter formatter = new SimpleFormatter();
+			fileHandler.setFormatter(formatter);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		
+	}
+
+}

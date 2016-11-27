@@ -1,0 +1,10 @@
+package com.myvidessa.locator;
+
+public class MyvidessaAddProviderLocator {
+	public static String PROVIDER_TITLE_ID="ptitle";
+	public static String PROVIDER_FIRSTNAME_ID="pfname";
+	public static String PROVIDER_MIDDLENAME_ID="pmname";
+	public static String PROVIDER_LASTNAME_ID="plname";
+	public static String PROVIDER_EMAIL_ID="pemail";
+
+}

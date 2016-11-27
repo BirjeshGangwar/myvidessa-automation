@@ -1,0 +1,8 @@
+package com.myvidessa.impl;
+
+public interface MyvidessaLoginHelperImpl {
+
+	//login with valid credentials 
+	public void performLogin(WebDriver driver,String username,String password);
+	
+}

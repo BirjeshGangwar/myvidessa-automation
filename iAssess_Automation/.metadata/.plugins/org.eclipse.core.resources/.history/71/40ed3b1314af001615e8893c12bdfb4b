@@ -1,0 +1,11 @@
+package com.myvidessa.impl;
+
+public class MyvidessaAddProviderImpl implements MyvidessaAddProviderHelperImpl {
+
+	@Override
+	public void addProvider() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

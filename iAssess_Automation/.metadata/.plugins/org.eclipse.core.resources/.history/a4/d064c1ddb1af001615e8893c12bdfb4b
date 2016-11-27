@@ -1,0 +1,24 @@
+Nov 21, 2016 10:14:24 AM com.myvidessa.tst.MyvidessaAddProviderTest setup
+INFO: Launching Browser
+Nov 21, 2016 10:14:28 AM com.myvidessa.tst.MyvidessaAddProviderTest setup
+INFO: Opening Application now
+Nov 21, 2016 10:14:40 AM com.myvidessa.tst.MyvidessaAddProviderTest addProviderWithNoDataFilled
+INFO: Add Provider with no data
+Nov 21, 2016 10:14:46 AM com.myvidessa.tst.MyvidessaAddProviderTest addProviderWithNoDataFilled
+INFO: Error Message is same as expected|| Test Case Passed
+Nov 21, 2016 10:14:48 AM com.myvidessa.tst.MyvidessaAddProviderTest addProviderWithNoDataFilled
+INFO: closed error alert box
+Nov 21, 2016 10:14:49 AM com.myvidessa.tst.MyvidessaAddProviderTest addProviderWithNoDataFilled
+INFO: closed Add provider form
+Nov 21, 2016 10:15:40 AM com.myvidessa.tst.MyvidessaAddProviderTest addProviderWithValidData
+INFO: Add Provider with Valid data in all fields
+Nov 21, 2016 10:15:52 AM com.myvidessa.tst.MyvidessaAddProviderTest addProviderWithValidData
+INFO: Provider Added Successfully || Test Case Passed
+Nov 21, 2016 10:15:52 AM com.myvidessa.tst.MyvidessaAddProviderTest addProviderWithSomeInvalidData
+INFO: Add Provider with some invalid data in all fields
+Nov 21, 2016 10:16:01 AM com.myvidessa.tst.MyvidessaAddProviderTest addProviderWithSomeInvalidData
+INFO: Error Message is same as expected|| Test Case Passed
+Nov 21, 2016 10:16:03 AM com.myvidessa.tst.MyvidessaAddProviderTest addProviderWithSomeInvalidData
+INFO: closed error alert box
+Nov 21, 2016 10:16:04 AM com.myvidessa.tst.MyvidessaAddProviderTest addProviderWithSomeInvalidData
+INFO: closed Add provider form

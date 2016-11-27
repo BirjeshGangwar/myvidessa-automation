@@ -1,0 +1,23 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.WebDriver;
+
+import com.myvidessa.genericMethods.MyvidessaCommanHelperImpl;
+import com.myvidessa.genericMethods.MyvidessaCommanImpl;
+import com.myvidessa.locator.MyvidessaAddProviderLocator;
+
+public class MyvidessaAddProviderImpl implements MyvidessaAddProviderHelperImpl {
+	
+	MyvidessaCommanHelperImpl commonhelperimpl=new MyvidessaCommanImpl();
+	@Override
+	public void addProvider(WebDriver driver) {
+	
+		
+	}
+	@Override
+	public void addProviderWithNoData(WebDriver driver) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

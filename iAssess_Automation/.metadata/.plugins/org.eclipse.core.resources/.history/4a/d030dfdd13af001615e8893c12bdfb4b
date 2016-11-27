@@ -1,0 +1,5 @@
+package com.myvidessa.impl;
+
+public class MyvidessaAddProviderImpl implements MyvidessaAddProviderHelperImpl {
+
+}

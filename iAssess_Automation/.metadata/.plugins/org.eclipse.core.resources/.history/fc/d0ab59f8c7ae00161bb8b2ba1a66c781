@@ -1,0 +1,9 @@
+package com.myvidessa.tst;
+
+public class MyvidessaIntBrowserTest {
+
+	public static void initializeBrowser()
+	{
+		
+	}
+}

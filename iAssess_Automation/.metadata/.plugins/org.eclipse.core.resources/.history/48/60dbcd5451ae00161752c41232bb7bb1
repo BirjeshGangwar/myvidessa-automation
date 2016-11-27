@@ -1,0 +1,5 @@
+package com.myvidessa.impl;
+
+public interface MyvidessaLoginHelperImpl {
+
+}

@@ -1,0 +1,47 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.myvidessa.genericMethods.MyvidessaCommanHelperImpl;
+import com.myvidessa.genericMethods.MyvidessaCommanImpl;
+import com.myvidessa.locator.MyvidessaAddProviderLocator;
+import com.myvidessa.locator.MyvidessaSignupLocator;
+
+public class MyvidessaAddProviderImpl implements MyvidessaAddProviderHelperImpl {
+
+	MyvidessaCommanHelperImpl commonhelperimpl = new MyvidessaCommanImpl();
+
+	@Override
+	public void addProvider(WebDriver driver) {
+
+	}
+
+	@Override
+	public void addProviderWithNoData(WebDriver driver) throws InterruptedException {
+		driver.findElement(By.linkText(MyvidessaSignupLocator.SIGNUP_REGISTER_LINKTEXT)).click();
+		Thread.sleep(2000);
+		driver.findElement(By.tagName("body")).sendKeys(Keys.CONTROL+"2");
+		Set<String> handles = driver.getWindowHandles();
+	    String current = driver.getWindowHandle();
+	    handles.remove(current);
+	    String newTab = handles.iterator().next();
+	    locator.window(newTab);
+		Thread.sleep(20000);
+		driver.switchTo().window(mainWindow);
+		//driver.switchTo().defaultContent();
+		System.out.println("switched to tab 2");
+		//WebDriverWait wait=new WebDriverWait(driver, 20);
+		WebElement element=driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_ADDPROVIDER_BTN_ID));
+		//wait.until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+		driver.findElement(By.id(MyvidessaAddProviderLocator.PROVIDER_SUBMIT_BTN_ID)).click();;
+
+	}
+
+}

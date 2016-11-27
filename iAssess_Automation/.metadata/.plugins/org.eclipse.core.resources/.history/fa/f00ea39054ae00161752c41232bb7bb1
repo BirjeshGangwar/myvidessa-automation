@@ -1,0 +1,13 @@
+package com.myvidessa.tst;
+
+import org.openqa.selenium.WebDriver;
+
+public class MyvidessaLoginTest {
+	public WebDriver driver;
+	public void loginWithValidCredentials()
+	{
+		
+	}
+	
+
+}

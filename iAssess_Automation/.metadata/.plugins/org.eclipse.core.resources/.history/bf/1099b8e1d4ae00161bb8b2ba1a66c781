@@ -1,0 +1,12 @@
+package com.myvidessa.impl;
+
+import java.util.Properties;
+
+public class MyvidessaLoadPropertiesFileImpl {
+	
+	public Properties loadPropertiesFile()
+	{
+		File file=new File("C:/Users/User/workspace/amcat/src/com/amcat/config/object.properties");
+	}
+
+}

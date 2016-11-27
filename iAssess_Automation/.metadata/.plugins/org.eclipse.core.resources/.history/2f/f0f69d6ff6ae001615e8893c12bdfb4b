@@ -1,0 +1,15 @@
+package com.myvidessa.genericMethods;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+public class MyvidessaCommanImpl implements MyvidessaCommanHelperImpl {
+
+	// This method is use to verify text content on the page.
+	@Override
+	public void assertVerifyTextOnPage(By by, WebDriver driver, String expectedResult) {
+		String actualResult = driver.findElement(by).getText();
+		Assert.assertEquals(actualResult, expectedResult);
+	}
+}

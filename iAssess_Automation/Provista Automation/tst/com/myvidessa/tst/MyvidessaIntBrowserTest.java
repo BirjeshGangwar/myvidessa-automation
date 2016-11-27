@@ -1,0 +1,17 @@
+package com.myvidessa.tst;
+
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MyvidessaIntBrowserTest {
+
+	public static WebDriver initializeBrowser(WebDriver driver,Properties prop)
+	{
+		String path=prop.getProperty("CHROMEDRIVERPATH");
+	    System.setProperty("webdriver.chrome.driver",path);	
+	    driver=new ChromeDriver();
+	    return driver;
+	}
+}

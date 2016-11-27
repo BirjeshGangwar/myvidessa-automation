@@ -1,0 +1,10 @@
+package com.myvidessa.impl;
+
+import org.openqa.selenium.WebDriver;
+
+public interface MyvidessaAddProviderHelperImpl {
+	
+	//This method is to add the provider
+	public void addProvider(WebDriver driver);
+
+}
